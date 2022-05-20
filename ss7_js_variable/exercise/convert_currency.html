@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Convert Currency</title>
+    <style>
+        #res{
+            color: #5628FF;
+        }
+        button{
+            background-color: #8F82CF;
+            border: solid #7188E4;
+            color: white;
+            height: 30px;
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
 <h1>CONVERT CURRENCY</h1>
@@ -14,16 +26,16 @@
     </tr>
     <tr>
         <td><input id="amount" type="number"></td>
-        <td>
+        <td id="fC">
             <select id="fromCur">
-                <option value="vnf">VietNam</option>
-                <option value="usf">USD</option>
+                <option value="vnd">VietNam</option>
+                <option value="usd">USD</option>
             </select>
         </td>
         <td>
             <select id="toCur">
-                <option name="ust">USD</option>
-                <option name="vnt">VietNam</option>
+                <option value="usd">USD</option>
+                <option value="vnd">VietNam</option>
             </select>
         </td>
         <td><button onclick="convertMoney()">Convert</button></td>
@@ -39,14 +51,14 @@
         let money = document.getElementById("amount").value;
         money = Number.parseInt(money);
         let fCurrency = document.getElementById("fromCur").value;
-        return fCurrency;
         let tCurrency = document.getElementById("toCur").value;
-        return tCurrency;
-        if(fCurrency == vnf && tCurrency == ust){
-            document.getElementById("res").innerHTML = "Result: " + (money * 23000);
 
+        if(fCurrency == "vnd" && tCurrency == "usd"){
+            document.getElementById("res").innerHTML = "Result: " + (money / 23000);
         }
-
+        if(fCurrency == "usd" && tCurrency == "vnd"){
+            document.getElementById("res").innerHTML = "Result: " + (money * 23000);
+        }
     }
 </script>
 </html>
