@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Event</title>
+</head>
+<body>
+<form>
+<img id="penaldo" src="penaldo.png" height="375" width="666">
+<p>Click button below to move CR7 to the right </p>
+    <input onclick="moveRight()" type="button" value="Click">
+</form>
+</body>
+<script>
+    let cr7 = document.getElementById("penaldo");
+    cr7.style.position = 'relative';
+    cr7.style.left = '0px';
+    function moveRight() {
+        cr7.style.left = parseInt(cr7.style.left) + 10 + 'px';
+    }
+</script>
+</html>

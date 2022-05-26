@@ -15,9 +15,9 @@
 <script>
     function checkBMI() {
         let w = document.getElementById("wei").value;
-        w = Number.parseInt(w);
+        w = Number.parseFloat(w);
         let h = document.getElementById("hei").value;
-        h = Number.parseInt(h);
+        h = Number.parseFloat(h);
         let bmi = w / (h ^ 2);
         if (bmi < 18)
             document.getElementById("res").innerHTML = "Your interpretation is Underweight";
