@@ -3,28 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Caculator</title>
+    <style>
+        .keys{
+            border: 1px solid #cccccc;
+            box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+            border-radius: 20px;
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            height: 400px;
+        }
+        .button{
+            height: 70px;
+            width: 100px;
+            margin-right: 5px;
+            margin-top: 15px;
+            padding: 5px;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            border: 1px solid #D1D1D1;
+            background-color: transparent;
+            font-size: 2rem;
+            color: #0000FF;
+            background-image: linear-gradient(to bottom, transparent, transparent 50%, rgba(0,0,0,.04));
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0
+            0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+            text-shadow: 0 1px rgba(255,255,255,.4);
+        }
+        .button:hover{
+            background-color: #eaeaea;
+        }
+        #box{
+            font-size: 30px;
+            border-radius: 3px;
+            width: 430px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-<input id="box" type="text" value="0" style="text-align: right"><br>
-<span><input id="1" type="button" value="1"></span>
-<span><input id="2" type="button" value="2"></span>
-<span><input id="3" type="button" value="3"></span>
-<span><input id="+" type="button" value="+"></span><br>
-<span><input id="4" type="button" value="4"></span>
-<span><input id="5" type="button" value="5"></span>
-<span><input id="6" type="button" value="6"></span>
-<span><input id="-" type="button" value="-"></span><br>
-<span><input id="7" type="button" value="7"></span>
-<span><input id="8" type="button" value="8"></span>
-<span><input id="9" type="button" value="9"></span>
-<span><input id="x" type="button" value="x"></span><br>
-<span><input id="C" type="button" value="C"></span>
-<span><input id="0" type="button" value="0"></span>
-<span><input id="=" type="button" value="="></span>
-<span><input id="/" type="button" value="/"></span>
+<h1 style="text-align: center">BEST CACULATOR EVER</h1>
+<div class="keys">
+    <input id="box" type="text" style="text-align: right"><br>
+    <span><input onclick="display('1')" class="button" type="button" value="1"></span>
+    <span><input onclick="display('2')" class="button" type="button" value="2"></span>
+    <span><input onclick="display('3')" class="button" type="button" value="3"></span>
+    <span><input onclick="display('+')" class="button" type="button" value="+"></span><br>
+    <span><input onclick="display('4')" class="button" type="button" value="4"></span>
+    <span><input onclick="display('5')" class="button" type="button" value="5"></span>
+    <span><input onclick="display('6')" class="button" type="button" value="6"></span>
+    <span><input onclick="display('-')" class="button" type="button" value="-"></span><br>
+    <span><input onclick="display('7')" class="button" type="button" value="7"></span>
+    <span><input onclick="display('8')" class="button" type="button" value="8"></span>
+    <span><input onclick="display('9')" class="button" type="button" value="9"></span>
+    <span><input onclick="display('*')" class="button" type="button" value="x"></span><br>
+    <span><input onclick="clearScreen()" class="button" type="button" value="C"></span>
+    <span><input onclick="display('0')" class="button" type="button" value="0"></span>
+    <span><input onclick="countNum()" class="button" type="button" value="="></span>
+    <span><input onclick="display('/')" class="button" type="button" value="/"></span>
+</div>
 
 </body>
 <script>
-    
+    function countNum() {
+        let output = document.getElementById("box").value;
+        let num = eval(output);
+        document.getElementById("box").value = num;
+        return num;
+    }
+    function clearScreen() {
+        document.getElementById("box").value = "";
+    }
+    function display(value) {
+        document.getElementById("box").value += value;
+        return value;
+    }
 </script>
 </html>
