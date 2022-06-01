@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci % 5 = 0</title>
+</head>
+<body>
+
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    let temp = 0;
+
+    for(let i = 0; i < 20; i++){
+        temp = a + b;
+        a = b;
+        b = temp;
+        if(a % 5 == 0){
+            document.write(a);
+            break;
+        }
+    }
+</script>
+</html>

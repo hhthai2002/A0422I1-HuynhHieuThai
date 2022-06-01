@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let guess!</title>
+</head>
+<body>
+<button onclick="play()">Play</button>
+<button onclick="play()">Play Again</button>
+
+</body>
+<script>
+    function play() {
+        let from = parseInt(prompt("What number range do you want to guess? From? "));
+        let to = parseInt(prompt("To?"));
+        for(let i = from; i <= to; i++){
+            var rand = Number.parseInt(Math.random()*i);
+        }
+        let guessNum = parseInt(prompt("What is the number you guess?"));
+        if(rand == guessNum){
+            alert("Wow amazing good job!");
+        }
+        else{
+            alert("Good luck!");
+        }
+
+    }
+
+</script>
+</html>
