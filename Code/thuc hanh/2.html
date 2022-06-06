@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Find number of day of month of year</h1>
+Month<input type="text" id="month">
+Year<input type="text" id="year">
+<button onclick="check()">Check</button><br><hr>
+<p id="res">Number of day</p>
+
+</body>
+<script>
+    function check() {
+        let month = parseInt(document.getElementById("month").value);
+        let year = parseInt(document.getElementById("year").value);
+
+        let isLeapYear = false;
+
+        let isDivisibleBy4 = year % 4 == 0;
+        if (isDivisibleBy4) {
+            let isDivisibleBy100 = year % 100 == 0;
+            if (isDivisibleBy100) {
+                let isDivisibleBy400 = year % 400 == 0;
+                if (isDivisibleBy400) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+        if (isLeapYear == true) {
+            if (month == 2) {
+                document.getElementById("res").innerHTML = "The number of day of 2/" + year + " is 28 days";
+            }
+        } else {
+            switch (month) {
+                case 1, 3, 5, 7, 8, 10, 12:
+                    document.getElementById("res").innerHTML = "The number of day of " + month + "/" + year + " is 31 days";
+                    case 2, 4, 6, 9, 11:
+                        document.getElementById("res").innerHTML = "The number of day of " + month + "/" + year +
+                            " is 30 days";
+            }
+        }
+    }
+</script>
+</html>
