@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let n = prompt("Enter a number:");
+    let str = n.toString();
+    let res = [str[0]];
+    for(let i = 1; i < str.length; i++){
+        if(str[i] % 2 == 0 && str[i + 1] % 2 == 0){
+            res.push("-", str[i]);
+        }
+        else{
+            res.push(str[i]);
+        }
+        document.write(res.join(''));
+    }
+</script>
+</html>
