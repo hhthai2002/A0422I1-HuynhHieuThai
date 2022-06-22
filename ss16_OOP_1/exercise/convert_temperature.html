@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Temperature{
+        constructor(cDegree) {
+            this.cDegree = cDegree;
+        }
+        getCDegree(){
+            return this.cDegree;
+        }
+        setCDegree(cDegree){
+            this.cDegree = cDegree;
+        }
+        convertToF(){
+            return (this.cDegree * 1.8 + 32);
+        }
+        convertToK(){
+            return (this.cDegree + 273.15);
+        }
+    }
+    let temp = new Temperature();
+    temp.setCDegree(parseFloat(prompt("Input C degree:")));
+    let getC = temp.getCDegree();
+    let conF = temp.convertToF();
+    let conK = temp.convertToK();
+    
+    document.write("The C degree is " + getC + "<br> Convert to F is " + conF + "<br> Convert to K is " + conK);
+    
+</script>
+</html>
