@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">Danh sách bệnh nhân</h1>
+<p id="result"></p>
+</body>
+<script>
+    class BenhNhan{
+        constructor(stt, hoVaTen, tuoi, diaChi, sdt) {
+            this.stt = stt;
+            this.hoVaTen = hoVaTen;
+            this.tuoi = tuoi;
+            this.diaChi = diaChi;
+            this.sdt = sdt;
+        }
+        setStt(stt){
+            this.stt = stt;
+        }
+        getStt(){
+            return this.stt;
+        }
+        setHoVaTen(hoVaTen){
+            this.hoVaTen = hoVaTen;
+        }
+        getHoVaTen(){
+            return this.hoVaTen;
+        }
+        setTuoi(tuoi){
+            this.tuoi = tuoi;
+        }
+        getTuoi(){
+            return this.tuoi;
+        }
+        setDiaChi(diaChi){
+            this.diaChi = diaChi;
+        }
+        getDiaChi(){
+            return this.diaChi;
+        }
+        setSdt(sdt){
+            this.sdt = sdt;
+        }
+        getSdt(){
+            return this.sdt;
+        }
+    }
+
+    let dsBN = [];
+    dsBN.push(new BenhNhan("1", "Nguyễn Lê Hoàng Oanh", "20", "Quảng Nam", "0923434564"));
+    dsBN.push(new BenhNhan("2", "Nguyễn Trần Cảnh", "30", "Quảng Nam", "0943246324"));
+    dsBN.push(new BenhNhan("3", "Hoàng Thanh Hùng", "15", "Quảng Nam", "0123451235"));
+    dsBN.push(new BenhNhan("4", "Trần Lệ Quyên", "19", "Quảng Nam", "0923093748"));
+
+    function themBenhNhan() {
+        let benhNhanMoi = new BenhNhan(stt, hoVaTen, tuoi, diaChi, sdt);
+        dsBN.push(benhNhanMoi);
+        hienThi(dsBN);
+
+    }
+    function hienThi(benhNhan) {
+        let tableString = '<table border="1" style="border-collapse: collapse">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Họ và tên</th>\n' +
+            '        <th>Tuổi</th>\n' +
+            '        <th>Địa chỉ</th>\n' +
+            '        <th>Số điện thoại</th>\n' +
+            '    </tr>';
+
+        for (let i = 0; i < dsBN.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + benhNhan[i].getStt() + '</td>\n' +
+                '        <td>' + benhNhan[i].getHoVaTen() + '</td>\n' +
+                '        <td>' + benhNhan[i].getTuoi() + '</td>\n' +
+                '        <td>' + benhNhan[i].getDiaChi() + '</td>\n' +
+                '        <td>' + benhNhan[i].getSdt() + '</td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("result").innerHTML = tableString;
+    }
+    hienThi(dsBN);
+    themBenhNhan();
+</script>
+</html>
