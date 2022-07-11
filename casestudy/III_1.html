@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    
+        let arr = [];
+        let n = parseInt(prompt("Enter the length of array:"));
+        for(let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt("Enter the element " + (i + 1)));
+        }
+        alert("The array is: " + arr);
+        
+        
+        let prefixArr = new Array(arr.length);
+        prefixArr[0] = arr[0];
+        for(let i = 1; i < arr.length; i++){
+            prefixArr[i] = parseInt(prefixArr[i - 1] + arr[i]);
+        }
+        alert("The prefix Array is: " + prefixArr);
+</script>
+</html>

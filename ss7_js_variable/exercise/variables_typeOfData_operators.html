@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables, Type of Data and Operators</title>
+</head>
+<body>
+<h1>Mark Average</h1>
+<form>
+    <table>
+        <tr>
+            <th>Physics Mark</th>
+            <th>Chemistry Mark</th>
+            <th>Biology Mark</th>
+        </tr>
+        <tr>
+            <td><input id="phyMark" type="number"></td>
+            <td><input id="cheMark" type="number"></td>
+            <td><input id="bioMark" type="number"></td>
+            <td><input type="submit" onclick="avgMark()" value="Average"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+<script>
+    function avgMark() {
+        let phyM = document.getElementById("phyMark").value;
+        phyM = Number.parseInt(phyM);
+        let cheM = document.getElementById("cheMark").value;
+        cheM = Number.parseInt(cheM);
+        let bioM = document.getElementById("bioMark").value;
+        bioM = Number.parseInt(bioM);
+        if((phyM && cheM && bioM >= 0) && (phyM && cheM && bioM <= 10)) {
+            alert("The Average is " + ((phyM + cheM + bioM) / 3));
+        }
+        else{
+            alert("Your mark is invalid! Please enter again!")
+        }
+
+    }
+</script>
+</html>

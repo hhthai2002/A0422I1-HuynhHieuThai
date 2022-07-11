@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Tax</title>
+</head>
+<body>
+
+</body>
+<script>
+    let money = parseInt(prompt("Enter your sales by VND:"));
+    if(money < 0){
+        alert("Too less money");
+    }
+    if(money <= 5000000){
+        tax = money * 5 / 100;
+        alert("Your commission is " + tax);
+    }
+    else if(money > 5000000 && money <= 10000000){
+        tax = money * 10 / 100 + 250000;
+        alert("Your commission is " + tax);
+    }
+    else if(money > 10000000 && money <= 180000000){
+        tax = money * 15 / 100 + 750000;
+        alert("Your commission is " + tax);
+    }
+    else if(money > 10000000 && money <= 180000000) {
+        tax = money * 15 / 100 + 750000;
+        alert("Your commission is " + tax);
+    }
+</script>
+</html>

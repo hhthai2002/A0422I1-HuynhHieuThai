@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Form</title>
+	<style>
+		#word{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<form method="post">
+		<h1 style="background-color: #FF4C00; color: white; text-align: center; width: 50%; ">SỞ THÍCH CỦA BẠN</h1>
+		<table>
+			<tr>
+				<td id="word">Họ và tên</td>
+				<td><input type="text" name="fullname"></td>
+			</tr>
+			<tr>
+				<td id="word">Email</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+			<tr>
+				<td id="word" VALIGN="TOP">Sở thích</td>
+				<td>
+					<table style="color: #FF4C00">
+							<tr>
+								<td><input type="checkbox">Thể thao</td>
+								<td><input type="checkbox">Âm nhạc</td>
+								<td><input type="checkbox">Đọc sách</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox">Lướt web</td>
+								<td><input type="checkbox">Chơi game</td>
+								<td><input type="checkbox">Điện ảnh</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox">Du lịch</td>
+							</tr>
+						<tr>
+							<td><button>Gửi thông tin</button></td>
+							<td><button>Nhập lại</button></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

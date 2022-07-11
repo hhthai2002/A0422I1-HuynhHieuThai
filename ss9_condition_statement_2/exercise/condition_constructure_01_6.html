@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count Commission</title>
+</head>
+<body>
+
+</body>
+<script>
+    let money = parseInt(prompt("Enter your sales by VND:"));
+    if(money < 0){
+        alert("Your are fired");
+    }
+    if(money >= 10000000 && money < 30000000){
+        commission = money * 2.5 / 100;
+        alert("Your commission is " + commission);
+    }
+    else if(money >= 30000000 && money < 50000000){
+        commission = money * 3.7 / 100;
+        alert("Your commission is " + commission);
+    }
+    else if(money >= 50000000){
+        commission = money * 4.9 / 100;
+        alert("Your commission is " + commission);
+    }
+</script>
+</html>

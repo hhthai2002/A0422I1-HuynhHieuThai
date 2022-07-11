@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert Currency</title>
+    <style>
+        #res{
+            color: #5628FF;
+        }
+        button{
+            background-color: #8F82CF;
+            border: solid #7188E4;
+            color: white;
+            height: 30px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>CONVERT CURRENCY</h1>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input id="amount" type="number"></td>
+        <td id="fC">
+            <select id="fromCur">
+                <option value="vnd">VietNam</option>
+                <option value="usd">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="toCur">
+                <option value="usd">USD</option>
+                <option value="vnd">VietNam</option>
+            </select>
+        </td>
+        <td><button onclick="convertMoney()">Convert</button></td>
+    </tr>
+    <tr>
+        <th id="res">Result: </th>
+    </tr>
+</table>
+
+</body>
+<script>
+    function convertMoney() {
+        let money = document.getElementById("amount").value;
+        money = Number.parseInt(money);
+        let fCurrency = document.getElementById("fromCur").value;
+        let tCurrency = document.getElementById("toCur").value;
+
+        if(fCurrency == "vnd" && tCurrency == "usd"){
+            document.getElementById("res").innerHTML = "Result: " + (money / 23000);
+        }
+        if(fCurrency == "usd" && tCurrency == "vnd"){
+            document.getElementById("res").innerHTML = "Result: " + (money * 23000);
+        }
+    }
+</script>
+</html>

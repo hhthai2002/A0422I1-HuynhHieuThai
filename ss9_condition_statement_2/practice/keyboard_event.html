@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Event</title>
+</head>
+<body>
+<img id="penaldo" src="penaldo.png" width="250" height="280" style="position: absolute; left: 0; top: 0" >
+
+</body>
+<script>
+    window.addEventListener('keydown', moveSelection);
+    function moveUp() {
+        let up = document.getElementById("penaldo");
+        up.style.top = parseInt(up.style.top) - 5 + 'px';
+    }
+    function moveDown() {
+        let down = document.getElementById("penaldo");
+        down.style.top = parseInt(down.style.top) + 5 + 'px';
+    }
+    function moveLeft() {
+        let aleft = document.getElementById("penaldo");
+        aleft.style.left = parseInt(aleft.style.left) - 5 + 'px';
+    }
+    function moveRight() {
+        let aRight = document.getElementById("penaldo");
+        aRight.style.left = parseInt(aRight.style.left) + 5 + 'px';
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+
+        }
+
+    }
+</script>
+</html>

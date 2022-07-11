@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = [];
+    for(let i = 0; i < 2; i++){
+        arr[i] = prompt("Enter number " + (i + 1) +":");
+    }
+    function reverse() {
+        var temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
+        alert("After reversed: " + arr);
+    }
+    reverse();
+</script>
+</html>

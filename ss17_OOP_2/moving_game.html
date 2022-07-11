@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="siu"></div>
+</body>
+<script>
+    class Penaldo{
+        constructor(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+        }
+        penaldoImg(){
+            return '<img width = "'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+        moveRight(){
+            this.left += 10;
+        }
+    }
+    var pen = new Penaldo("penaldo.png", 20, 30, 200);
+    function start(){
+        if(pen.left < window.innerWidth - pen.size){
+            pen.moveRight();
+        }
+        document.getElementById('siu').innerHTML = pen.penaldoImg();
+        setTimeout(start, 500)
+    }
+
+    start();
+</script>
+</html>
